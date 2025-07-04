@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sam Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(to bottom, #050517, #000010);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, rgba(0,247,247,0.2) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: moveParticles 60s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes moveParticles {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 1000px; }
+    }
+
+    header, main, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      background: linear-gradient(120deg, #00f7f7 0%, #003366 100%);
+      padding: 50px 20px;
+      text-align: center;
+      box-shadow: 0 4px 30px rgba(0, 247, 247, 0.3);
+      border-bottom: 2px solid #00f7f7;
+    }
+
+    header img {
+      width: 150px;
+      border-radius: 50%;
+      box-shadow: 0 0 30px #00f7f7;
+      margin-bottom: 20px;
+      transition: transform 0.5s;
+    }
+    header img:hover {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    header h1 {
+      font-size: 3.2em;
+      margin: 10px 0;
+      color: #000;
+      text-shadow: 2px 2px 10px #00f7f7;
+    }
+
+    header p {
+      font-size: 1.3em;
+      color: #000;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section h2 {
+      font-size: 2.5em;
+      color: #00f7f7;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #00f7f7;
+      padding-bottom: 10px;
+    }
+
+    .description {
+      font-size: 1.2em;
+      line-height: 1.9;
+      opacity: 0.95;
+    }
+
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .button {
+      display: block;
+      background: rgba(0, 247, 247, 0.1);
+      color: #00f7f7;
+      text-align: center;
+      padding: 14px;
+      border: 2px solid #00f7f7;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background: #00f7f7;
+      color: #000;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00f7f7;
+    }
+
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .series-card {
+      background: rgba(17, 22, 44, 0.8);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 247, 247, 0.1);
+      backdrop-filter: blur(5px);
+      transition: transform 0.3s;
+    }
+
+    .series-card:hover {
+      transform: scale(1.02);
+    }
+
+    .series-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .series-card a {
+      display: block;
+      padding: 15px;
+      color: #00f7f7;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .series-card a:hover {
+      background: #00f7f710;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #000;
+      color: #aaa;
+      font-size: 0.95em;
+      border-top: 1px solid #111;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+      header p {
+        font-size: 1.1em;
+      }
+      .section h2 {
+        font-size: 2em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 30px 15px;
+      }
+      header img {
+        width: 120px;
+      }
+      header h1 {
+        font-size: 2em;
+      }
+      .section h2 {
+        font-size: 1.6em;
+      }
+      .description {
+        font-size: 1em;
+      }
+      .buttons-grid, .series-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://raw.githubusercontent.com/Screen-Blue/Sam-Studio/refs/heads/main/20250620_195258.jpg" alt="شعار Sam Studio">
+    <h1>Sam~Studio</h1>
+    <p>استوديو عربي لصناعة المحتوى والترفيه</p>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>عن Sam Studio</h2>
+      <p class="description">
+        Sam Studio هو استوديو جماعي يضم مجموعة من صناع المحتوى المبدعين الذين يعملون معًا لإنتاج سلاسل مرئية على YouTube. كل عضو يمتلك قناته الخاصة ومشاريعه، ويجتمع الجميع في هذا الاستوديو لصنع شيء أكبر وأمتع.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>أعضاء Sam Studio</h2>
+      <div class="buttons-grid">
+        <a class="button" href="https://youtube.com/@kitler1-15" target="_blank">🎬 قطلرز</a>
+        <a class="button" href="https://youtube.com/@dezard2.0" target="_blank">⚡ ديزارد</a>
+        <a class="button" href="https://youtube.com/@supermi-dz2th" target="_blank">🔥 سوبيرمي</a>
+        <a class="button" href="https://youtube.com/@mohammed-p77" target="_blank">🎮 محمد</a>
+        <a class="button" href="https://youtube.com/@pandaxboy" target="_blank">🐼 باندا</a>
+        <a class="button" href="https://youtube.com/@dralay_1" target="_blank">💡 درالي</a>
+        <a class="button" href="https://youtube.com/@its_bromi_1993" target="_blank">🎭 بارومي</a>
+        <a class="button" href="https://youtube.com/@uuooppyy_22?si=Q-cxd5xTM7fduJCQ" target="_blank">🖌️ يوبي</a>
+        <a class="button" href="https://youtube.com/@screen-yb4qb" target="_blank">🌀 Screen</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>سلاسل الأعضاء</h2>
+      <div class="series-grid">
+        <div class="series-card">
+          <img src="https://github.com/Screen-Blue/Sam-Studio/blob/main/2025061920143462.png?raw=true" alt="سلسلة سوبيرمي">
+          <a href="https://youtube.com/@supermi-dz2th" target="_blank">🔥 سلسلة سوبيرمي</a>
+        </div>
+        <div class="series-card">
+          <img src="https://raw.githubusercontent.com/Screen-Blue/Sam-Studio/refs/heads/main/Picsart_25-06-17_21-09-47-863.png" alt="سلسلة محمد">
+          <a href="https://youtube.com/@mohammed-p77" target="_blank">🎮 سلسلة محمد</a>
+        </div>
+        <div class="series-card">
+          <img src="https://raw.githubusercontent.com/Screen-Blue/Sam-Studio/refs/heads/main/Picsart_25-06-17_20-08-07-542.png" alt="سلسلة باندا">
+          <a href="https://youtube.com/@pandaxboy?si=Iecn_TOfZAPwPSAs" target="_blank">🎮 سلسلة باندا</a>
+        </div>
+        <div class="series-card">
+          <img src="https://raw.githubusercontent.com/Screen-Blue/Sam-Studio/refs/heads/main/Picsart_25-06-17_22-51-44-002.jpg" alt="سلسلة قطلرز">
+          <a href="https://youtube.com/@kitler1-15" target="_blank">🎬 سلسلة قطلرز</a>
+        </div>
+        <div class="series-card">
+          <img src="https://raw.githubusercontent.com/Screen-Blue/Sam-Studio/refs/heads/main/Picsart_25-06-17_22-02-57-433.png" alt="سلسلة ثري">
+          <a href="https://youtube.com/@three4real?si=oa7CIETetsS0EP9L" target="_blank">🎬 سلسلة ثري</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Sam Studio | تصميم وإبداع مشترك 💫
+  </footer>
+</body>
+</html>
